@@ -9,7 +9,7 @@ export default function ServerPage({ params: { serverId } }: ServerProps) {
     <>
       <ChannelsSidebar />
       <main className="bg-gray-700 flex flex-col flex-1">
-        <div className="flex items-center h-12 px-3 shadow-md">#general</div>
+        <div className="flex items-center h-12 px-3 shadow-sm">#general</div>
         <div className="flex-1 p-3 space-y-4 overflow-y-scroll">
           {[...Array(40)].map((_, i) => (
             <p key={i}>
