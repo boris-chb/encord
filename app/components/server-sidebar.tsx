@@ -1,36 +1,26 @@
-"use client";
-import DiscordIcon from "@/app/components/discord-icon";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Discord } from '@/app/components/ui/icons';
+import NavLink from '@/app/components/nav-link';
+import Image from 'next/image';
+
+const servers = [
+  { id: 1, img: 'next.svg' },
+  { id: 2, img: 'vercel.svg' },
+];
 
 export default function ServersSidebar() {
-  const pathname = usePathname();
-
   return (
-    <nav className="bg-gray-900 p-3 overflow-y-scroll flex flex-col gap-2">
-      <Link href={"/"}>
-        <div
-          className={`${
-            pathname === "/"
-              ? "rounded-2xl bg-brand text-white"
-              : "text-gray-100 hover:rounded-2xl hover:bg-brand hover:text-white"
-          } bg-gray-700  w-12 h-12 rounded-3xl  flex items-center justify-center  transition-all duration-200`}
-        >
-          <DiscordIcon className="w-7 h-5" />
-        </div>
-      </Link>
+    <nav className='flex flex-col gap-2 overflow-y-scroll bg-gray-900 p-3'>
+      <NavLink href='/'>
+        <Discord className='h-5 w-7' />
+      </NavLink>
 
-      <Link href="/servers/1">
-        <div
-          className={`${
-            pathname === "/servers/1"
-              ? "rounded-2xl bg-brand text-white"
-              : "text-gray-100 hover:rounded-2xl hover:bg-brand hover:text-white"
-          } bg-gray-700  w-12 h-12 rounded-3xl  flex items-center justify-center  transition-all duration-200`}
-        >
-          S1
-        </div>
-      </Link>
+      <hr className='mx-2 rounded border-t-2 border-t-white/[.06]' />
+
+      {servers.map(({ id, img }) => (
+        <NavLink key={id} href={`/servers/${id}`}>
+          <Image src={`/${img}`} fill alt='server icon' />
+        </NavLink>
+      ))}
     </nav>
   );
 }
