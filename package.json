@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.0.10",
+    "@supabase/supabase-js": "^2.38.5",
     "dns": "^0.2.2",
     "ioredis": "^5.3.2",
     "net": "^1.0.2",
