@@ -1,16 +1,43 @@
-import ChannelsSidebar from "@/app/components/channels-sidebar";
+import ChannelsSidebar from '@/app/components/channels-sidebar';
+import { createServerClient } from '@supabase/ssr';
+import { cookies } from 'next/headers';
 
 interface ServerProps {
   params: { serverId: string };
 }
 
-export default function ServerPage({ params: { serverId } }: ServerProps) {
+export function generateStaticParams() {
+  const serverIds = [1, 2, 3, 4];
+
+  return serverIds.map((id) => ({ serverId: `${id}` }));
+}
+
+export default async function ServerPage({
+  params: { serverId },
+}: ServerProps) {
+  const cookieStore = cookies();
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value;
+        },
+      },
+    }
+  );
+
+  const all = await supabase.from('notes').select('*');
+
+  console.log(all);
+
   return (
     <>
       <ChannelsSidebar />
-      <main className="bg-gray-700 flex flex-col flex-1">
-        <div className="flex items-center h-12 px-3 shadow-sm">#general</div>
-        <div className="flex-1 p-3 space-y-4 overflow-y-scroll">
+      <main className='flex flex-1 flex-col bg-gray-700'>
+        <div className='flex h-12 items-center px-3 shadow-sm'>#general</div>
+        <div className='flex-1 space-y-4 overflow-y-scroll p-3'>
           {[...Array(40)].map((_, i) => (
             <p key={i}>
               Message {i}. Lorem ipsum dolor sit amet consectetur adipisicing
