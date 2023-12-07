@@ -24,15 +24,18 @@
         "channels": [
           {
             "id": 3,
-            "label": "general"
+            "label": "general",
+            "unread": "true"
           },
           {
             "id": 4,
-            "label": "plugins"
+            "label": "plugins",
+            "unread": "true"
           },
           {
             "id": 5,
-            "label": "help"
+            "label": "help",
+            "unread": "true"
           },
           {
             "id": 6,
@@ -50,11 +53,13 @@
           },
           {
             "id": 8,
-            "label": "headless-ui"
+            "label": "headless-ui",
+            "unread": "true"
           },
           {
             "id": 9,
-            "label": "refactoring-ui"
+            "label": "refactoring-ui",
+            "unread": "true"
           },
           {
             "id": 10,
@@ -72,7 +77,8 @@
           },
           {
             "id": 12,
-            "label": "development"
+            "label": "development",
+            "unread": "true"
           },
           {
             "id": 13,

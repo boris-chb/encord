@@ -1,5 +1,5 @@
 import { Discord } from '@/app/components/ui/icons';
-import NavLink from '@/app/components/nav-link';
+import NavLink from '@/app/components/navigation/nav-link';
 import Image from 'next/image';
 
 const servers = [
