@@ -1,12 +1,18 @@
 'use client';
 import * as Icons from '@/app/components/ui/icons';
 
-import data from '@/data.json';
 import { ChannelLink } from '@/app/components/navigation/channel-link';
 import { useState } from 'react';
+import { useParams } from 'next/navigation';
 
-export default function ChannelsSidebar() {
+type ChannelSidebarProps = {
+  categories: any[];
+};
+
+export default function ChannelsSidebar({ categories }: ChannelSidebarProps) {
   const [closedCategories, setClosedCategories] = useState<number[]>([]);
+  const { channelId } = useParams();
+  const serverLabel = categories[0]?.servers.label;
 
   function toggleCategory(categoryId: number) {
     setClosedCategories((closedCategories) =>
@@ -15,6 +21,8 @@ export default function ChannelsSidebar() {
         : [...closedCategories, categoryId]
     );
   }
+
+  console.log(categories);
 
   return (
     <nav className='flex w-60 flex-col bg-gray-800'>
@@ -27,13 +35,13 @@ export default function ChannelsSidebar() {
           <Icons.Verified className='absolute h-4 w-4 text-gray-550' />
           <Icons.Check className=' absolute h-4 w-4' />
         </div>
-        Tailwind CSS
+        {serverLabel}
         <Icons.Chevron className='ml-auto h-[18px] w-[18px] opacity-80' />
       </button>
 
       {/* categories */}
-      <div className='flex-1 space-y-[21px] overflow-y-scroll pt-3 text-gray-300'>
-        {data['1'].categories.map((category) => (
+      <div className='flex-1 space-y-[21px] overflow-y-auto pt-3 text-gray-300'>
+        {categories.map((category: any) => (
           <div key={category.id}>
             {category.label && (
               <button
@@ -45,24 +53,23 @@ export default function ChannelsSidebar() {
                   className={`${
                     closedCategories.includes(category.id) && '-rotate-90'
                   } mr-1 h-3 w-3 transition duration-200`}
-                />{' '}
+                />
                 {category.label}
               </button>
             )}
 
+            {/* channels */}
             <div className='mt-[5px] space-y-0.5'>
               {category.channels
-                .filter((channel) => {
+                .filter((channel: any) => {
                   // filter channels to show only unread when
                   // category is collapsed
 
                   let isOpen = !closedCategories.includes(category.id);
 
-                  // not inferring types properly from json
-                  // @ts-expect-error
                   return isOpen || channel?.unread;
                 })
-                .map((channel) => (
+                .map((channel: any) => (
                   <ChannelLink key={channel.id} channel={channel} />
                 ))}
             </div>

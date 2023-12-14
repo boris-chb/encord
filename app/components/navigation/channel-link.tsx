@@ -7,8 +7,8 @@ import { classNames } from '../channels-sidebar';
 export function ChannelLink({ channel }: any) {
   // @ts-ignore
   const Icon = channel.icon ? Icons[channel.icon] : Icons.Hashtag;
-  const params = useParams();
-  const isActive = +params.channelId === channel.id;
+  const { channelId, serverId } = useParams();
+  const isActive = +channelId === channel.id;
 
   const state = isActive
     ? 'active'
@@ -25,7 +25,7 @@ export function ChannelLink({ channel }: any) {
   return (
     <Link
       key={channel.id}
-      href={`/servers/1/channels/${channel.id}`}
+      href={`/servers/${serverId}/channels/${channel.id}`}
       className={`${classes[state]} group relative mx-2 flex items-center rounded px-2 py-1`}
     >
       {state === 'inactiveUnread' && (

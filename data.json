@@ -1,109 +1,1071 @@
-{
-  "1": {
-    "label": "Tailwind CSS",
-    "categories": [
-      {
+[
+    {
         "id": 1,
-        "label": "",
-        "channels": [
-          {
-            "id": 1,
-            "label": "welcome",
-            "icon": "Book"
-          },
-          {
-            "id": 2,
-            "label": "announcements",
-            "icon": "Speakerphone"
-          }
-        ]
-      },
-      {
-        "id": 2,
         "label": "Tailwind CSS",
-        "channels": [
-          {
-            "id": 3,
-            "label": "general",
-            "unread": "true"
-          },
-          {
-            "id": 4,
-            "label": "plugins",
-            "unread": "true"
-          },
-          {
-            "id": 5,
-            "label": "help",
-            "unread": "true"
-          },
-          {
-            "id": 6,
-            "label": "internals"
-          }
+        "img": "vercel.svg",
+        "categories": [
+            {
+                "id": 891,
+                "label": "Resources",
+                "channels": [
+                    {
+                        "id": 8,
+                        "label": "discussion-topics",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 65,
+                        "label": "showcase-projects",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 348,
+                        "label": "general-chat",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 290,
+                "label": "Discussion",
+                "channels": [
+                    {
+                        "id": 239,
+                        "label": "general-chat",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 645,
+                        "label": "help-queries",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 812,
+                "label": "Resources",
+                "channels": [
+                    {
+                        "id": 254,
+                        "label": "general-chat",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 785,
+                        "label": "help-queries",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 927,
+                        "label": "random-talk",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 154,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 291,
+                        "label": "random-talk",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 904,
+                        "label": "resources-links",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 22,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 179,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 258,
+                        "label": "showcase-projects",
+                        "unread": "false"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "id": 3,
-        "label": "Tailwind Labs",
-        "channels": [
-          {
-            "id": 7,
-            "label": "tailwind-ui"
-          },
-          {
-            "id": 8,
-            "label": "headless-ui",
-            "unread": "true"
-          },
-          {
-            "id": 9,
-            "label": "refactoring-ui",
-            "unread": "true"
-          },
-          {
-            "id": 10,
-            "label": "heroicons"
-          }
+    },
+    {
+        "id": 2,
+        "label": "Reactiflux",
+        "img": "next.svg",
+        "categories": [
+            {
+                "id": 408,
+                "label": "Showcase",
+                "channels": [
+                    {
+                        "id": 957,
+                        "label": "discussion-topics",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 484,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 699,
+                        "label": "resources-links",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 641,
+                        "label": "resources-links",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 318,
+                "label": "General",
+                "channels": [
+                    {
+                        "id": 913,
+                        "label": "random-talk",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 799,
+                        "label": "random-talk",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 779,
+                        "label": "resources-links",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 773,
+                        "label": "general-chat",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 871,
+                "label": "General",
+                "channels": [
+                    {
+                        "id": 734,
+                        "label": "support-issues",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 457,
+                        "label": "discussion-topics",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 399,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 585,
+                        "label": "support-issues",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 388,
+                "label": "Announcements",
+                "channels": [
+                    {
+                        "id": 506,
+                        "label": "announcements-news",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 493,
+                        "label": "showcase-projects",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 861,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 697,
+                        "label": "random-talk",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "label": "Discussion",
+                "channels": [
+                    {
+                        "id": 434,
+                        "label": "help-queries",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 875,
+                        "label": "resources-links",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 90,
+                        "label": "random-talk",
+                        "unread": "false"
+                    }
+                ]
+            }
         ]
-      },
-      {
+    },
+    {
+        "id": "3",
+        "label": "JavaScript",
+        "categories": [
+            {
+                "id": 819,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 647,
+                        "label": "discussion-topics",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 504,
+                        "label": "support-issues",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 954,
+                        "label": "general-chat",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 422,
+                "label": "Showcase",
+                "channels": [
+                    {
+                        "id": 434,
+                        "label": "resources-links",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 708,
+                        "label": "random-talk",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 348,
+                        "label": "discussion-topics",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 468,
+                "label": "Discussion",
+                "channels": [
+                    {
+                        "id": 506,
+                        "label": "support-issues",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 873,
+                        "label": "resources-links",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 435,
+                        "label": "general-chat",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 59,
+                        "label": "showcase-projects",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 431,
+                "label": "Discussion",
+                "channels": [
+                    {
+                        "id": 229,
+                        "label": "help-queries",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 472,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 213,
+                        "label": "general-chat",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 293,
+                        "label": "support-issues",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 757,
+                "label": "Announcements",
+                "channels": [
+                    {
+                        "id": 407,
+                        "label": "support-issues",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 884,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 833,
+                        "label": "discussion-topics",
+                        "unread": "true"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "id": 4,
-        "label": "Off topic",
-        "channels": [
-          {
-            "id": 11,
-            "label": "design"
-          },
-          {
-            "id": 12,
-            "label": "development",
-            "unread": "true"
-          },
-          {
-            "id": 13,
-            "label": "random"
-          }
+        "label": "Vue Land",
+        "categories": [
+            {
+                "id": 75,
+                "label": "Announcements",
+                "channels": [
+                    {
+                        "id": 777,
+                        "label": "discussion-topics",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 499,
+                        "label": "random-talk",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 322,
+                        "label": "resources-links",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 350,
+                        "label": "resources-links",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 229,
+                "label": "General",
+                "channels": [
+                    {
+                        "id": 200,
+                        "label": "random-talk",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 729,
+                        "label": "random-talk",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 717,
+                        "label": "showcase-projects",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 483,
+                        "label": "showcase-projects",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 426,
+                "label": "Help",
+                "channels": [
+                    {
+                        "id": 131,
+                        "label": "showcase-projects",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 755,
+                        "label": "general-chat",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 86,
+                        "label": "support-issues",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 576,
+                        "label": "announcements-news",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 67,
+                "label": "Discussion",
+                "channels": [
+                    {
+                        "id": 757,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 403,
+                        "label": "support-issues",
+                        "unread": "true"
+                    }
+                ]
+            }
         ]
-      },
-      {
+    },
+    {
         "id": 5,
-        "label": "Community",
-        "channels": [
-          {
-            "id": 14,
-            "label": "jobs"
-          },
-          {
-            "id": 15,
-            "label": "showcase"
-          },
-          {
-            "id": 16,
-            "label": "bots"
-          }
+        "label": "Angular",
+        "categories": [
+            {
+                "id": 463,
+                "label": "Showcase",
+                "channels": [
+                    {
+                        "id": 417,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 196,
+                        "label": "resources-links",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 551,
+                        "label": "help-queries",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 628,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 921,
+                        "label": "help-queries",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 625,
+                        "label": "showcase-projects",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 575,
+                        "label": "support-issues",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 973,
+                        "label": "showcase-projects",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 835,
+                "label": "Announcements",
+                "channels": [
+                    {
+                        "id": 827,
+                        "label": "resources-links",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 645,
+                        "label": "general-chat",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 96,
+                "label": "Help",
+                "channels": [
+                    {
+                        "id": 887,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 678,
+                        "label": "support-issues",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 909,
+                        "label": "help-queries",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 869,
+                        "label": "discussion-topics",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 420,
+                "label": "Support",
+                "channels": [
+                    {
+                        "id": 801,
+                        "label": "showcase-projects",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 466,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  }
-}
+    },
+    {
+        "id": 6,
+        "label": "Python",
+        "categories": [
+            {
+                "id": 203,
+                "label": "General",
+                "channels": [
+                    {
+                        "id": 733,
+                        "label": "resources-links",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 285,
+                        "label": "help-queries",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 199,
+                        "label": "discussion-topics",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 461,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 967,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 349,
+                        "label": "support-issues",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 186,
+                        "label": "resources-links",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 556,
+                        "label": "random-talk",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 575,
+                "label": "Showcase",
+                "channels": [
+                    {
+                        "id": 484,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 886,
+                        "label": "help-queries",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 899,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 486,
+                        "label": "general-chat",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 24,
+                        "label": "showcase-projects",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 492,
+                        "label": "discussion-topics",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 209,
+                        "label": "random-talk",
+                        "unread": "false"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "label": "Node.js",
+        "categories": [
+            {
+                "id": 914,
+                "label": "Help",
+                "channels": [
+                    {
+                        "id": 169,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 326,
+                        "label": "support-issues",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "label": "Help",
+                "channels": [
+                    {
+                        "id": 1,
+                        "label": "random-talk",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 611,
+                        "label": "resources-links",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 681,
+                        "label": "announcements-news",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 478,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 573,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 382,
+                        "label": "showcase-projects",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 159,
+                        "label": "resources-links",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 248,
+                "label": "Discussion",
+                "channels": [
+                    {
+                        "id": 209,
+                        "label": "random-talk",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 613,
+                        "label": "announcements-news",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 577,
+                        "label": "discussion-topics",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 850,
+                        "label": "resources-links",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 451,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 791,
+                        "label": "resources-links",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 880,
+                        "label": "discussion-topics",
+                        "unread": "true"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id":8,
+        "label": "Ruby on Rails",
+        "categories": [
+            {
+                "id": 440,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 85,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 154,
+                        "label": "discussion-topics",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 378,
+                        "label": "general-chat",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 571,
+                "label": "Help",
+                "channels": [
+                    {
+                        "id": 538,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 368,
+                        "label": "help-queries",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 292,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 990,
+                        "label": "resources-links",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 219,
+                "label": "Help",
+                "channels": [
+                    {
+                        "id": 970,
+                        "label": "discussion-topics",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 694,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 958,
+                        "label": "general-chat",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 841,
+                "label": "Announcements",
+                "channels": [
+                    {
+                        "id": 291,
+                        "label": "showcase-projects",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 179,
+                        "label": "discussion-topics",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 915,
+                "label": "Support",
+                "channels": [
+                    {
+                        "id": 804,
+                        "label": "announcements-news",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 753,
+                        "label": "showcase-projects",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 690,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 347,
+                        "label": "resources-links",
+                        "unread": "false"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "label": "Flutter",
+        "categories": [
+            {
+                "id": 578,
+                "label": "General",
+                "channels": [
+                    {
+                        "id": 776,
+                        "label": "random-talk",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 80,
+                        "label": "support-issues",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 669,
+                        "label": "help-queries",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 687,
+                "label": "Announcements",
+                "channels": [
+                    {
+                        "id": 220,
+                        "label": "discussion-topics",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 835,
+                        "label": "resources-links",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 729,
+                        "label": "showcase-projects",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 94,
+                "label": "Resources",
+                "channels": [
+                    {
+                        "id": 313,
+                        "label": "general-chat",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 715,
+                        "label": "showcase-projects",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 18,
+                "label": "Support",
+                "channels": [
+                    {
+                        "id": 986,
+                        "label": "general-chat",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 119,
+                        "label": "support-issues",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 797,
+                        "label": "announcements-news",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 975,
+                        "label": "discussion-topics",
+                        "unread": "true"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "label": "Kotlin",
+        "categories": [
+            {
+                "id": 620,
+                "label": "Help",
+                "channels": [
+                    {
+                        "id": 373,
+                        "label": "support-issues",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 26,
+                        "label": "support-issues",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 191,
+                        "label": "support-issues",
+                        "unread": "true"
+                    }
+                ]
+            },
+            {
+                "id": 389,
+                "label": "Resources",
+                "channels": [
+                    {
+                        "id": 388,
+                        "label": "help-queries",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 26,
+                        "label": "help-queries",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 421,
+                "label": "Off-Topic",
+                "channels": [
+                    {
+                        "id": 243,
+                        "label": "support-issues",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 321,
+                        "label": "support-issues",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 988,
+                "label": "Announcements",
+                "channels": [
+                    {
+                        "id": 508,
+                        "label": "general-chat",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 770,
+                        "label": "support-issues",
+                        "unread": "false"
+                    }
+                ]
+            },
+            {
+                "id": 222,
+                "label": "Support",
+                "channels": [
+                    {
+                        "id": 993,
+                        "label": "support-issues",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 202,
+                        "label": "help-queries",
+                        "unread": "false"
+                    },
+                    {
+                        "id": 24,
+                        "label": "support-issues",
+                        "unread": "true"
+                    },
+                    {
+                        "id": 39,
+                        "label": "random-talk",
+                        "unread": "false"
+                    }
+                ]
+            }
+        ]
+    }
+]
