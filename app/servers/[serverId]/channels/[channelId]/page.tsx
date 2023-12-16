@@ -1,80 +1,104 @@
 import * as Icons from '@/app/components/ui/icons';
+import { createSupabaseClient } from '@/app/lib/db';
+import { cookies } from 'next/headers';
 import Image from 'next/image';
 
-const ChannelPage = (params: any) => {
-  const channel = {
+export default async function ChannelPage({
+  params,
+}: {
+  params: { serverId: string; channelId: string };
+}) {
+  const supabase = createSupabaseClient(cookies());
+
+  const { data: channel, error } = await supabase
+    .from('channels')
+    .select(
+      `
+    *,
+    messages(*, user:profiles!inner(id, avatar_url, name))
+  `
+    )
+    .eq('id', params.channelId)
+    .single();
+
+  if (error) {
+    console.log(error);
+    throw new Error('Could not fetch channel messages');
+  }
+
+  const dummyChannel = {
     label: 'share with community',
     description:
       'This is a channel description for demo purposes.This is a channel description for demo purposes.This is a channel description for demo purposes.',
     messages: [
       {
         text: "Hey, how's it going?",
-        author: { name: 'leerob', avatarUrl: '/vercel.svg' },
+        user: { name: 'leerob', avatarUrl: '/vercel.svg' },
         date: '01-04-2023',
       },
       {
         text: 'Pretty good, working on my project. You?',
-        author: { name: 'py.dev', avatarUrl: '/python.svg' },
+        user: { name: 'py.dev', avatarUrl: '/python.svg' },
         date: '01-04-2023',
       },
       {
         text: "Just chilling. What's your project about?",
-        author: { name: 'mohammed', avatarUrl: '/next.svg' },
+        user: { name: 'mohammed', avatarUrl: '/next.svg' },
         date: '01-04-2023',
       },
       {
         text: "It's a Discord clone!",
-        author: { name: 'leerob', avatarUrl: '/vercel.svg' },
+        user: { name: 'leerob', avatarUrl: '/vercel.svg' },
         date: '02-04-2023',
       },
       {
         text: "Wow, that's pretty cool.",
-        author: { name: 'py.dev', avatarUrl: '/python.svg' },
+        user: { name: 'py.dev', avatarUrl: '/python.svg' },
         date: '02-04-2023',
       },
       {
         text: 'Must be a lot of work to make it happen.',
-        author: { name: 'py.dev', avatarUrl: '/python.svg' },
+        user: { name: 'py.dev', avatarUrl: '/python.svg' },
         date: '02-04-2023',
       },
       {
         text: "Yeah, can't wait to see it when it's done.",
-        author: { name: 'mohammed', avatarUrl: '/next.svg' },
+        user: { name: 'mohammed', avatarUrl: '/next.svg' },
         date: '02-04-2023',
       },
       {
         text: 'Let me know if you need any help!',
-        author: { name: 'mohammed', avatarUrl: '/next.svg' },
+        user: { name: 'mohammed', avatarUrl: '/next.svg' },
         date: '02-04-2023',
       },
       {
         text: "I'll definitely need your feedback.",
-        author: { name: 'leerob', avatarUrl: '/vercel.svg' },
+        user: { name: 'leerob', avatarUrl: '/vercel.svg' },
         date: '03-04-2023',
       },
       {
         text: 'There are a few things I would like to make, but not sure whether I should integrate them into final version.',
-        author: { name: 'leerob', avatarUrl: '/vercel.svg' },
+        user: { name: 'leerob', avatarUrl: '/vercel.svg' },
         date: '03-04-2023',
       },
       {
         text: "I'll share a demo with you folks once it's ready for deployment!",
-        author: { name: 'leerob', avatarUrl: '/vercel.svg' },
+        user: { name: 'leerob', avatarUrl: '/vercel.svg' },
         date: '03-04-2023',
       },
       {
         text: 'Count me in for the beta test!',
-        author: { name: 'py.dev', avatarUrl: '/python.svg' },
+        user: { name: 'py.dev', avatarUrl: '/python.svg' },
         date: '03-04-2023',
       },
       {
         text: "I'm always here to help!",
-        author: { name: 'mohammed', avatarUrl: '/next.svg' },
+        user: { name: 'mohammed', avatarUrl: '/next.svg' },
         date: '03-04-2023',
       },
       {
         text: 'Thanks, guys!',
-        author: { name: 'leerob', avatarUrl: '/vercel.svg' },
+        user: { name: 'leerob', avatarUrl: '/vercel.svg' },
         date: '04-04-2023',
       },
     ],
@@ -139,7 +163,7 @@ const ChannelPage = (params: any) => {
         {channel.messages.map((message, i) => (
           <div key={i}>
             {i === 0 ||
-            message.author.name !== channel.messages[i - 1].author.name ? (
+            message.user.name !== channel.messages[i - 1].user.name ? (
               <MessageThread message={message} />
             ) : (
               <Message message={message} />
@@ -149,21 +173,19 @@ const ChannelPage = (params: any) => {
       </div>
     </main>
   );
-};
-
-export default ChannelPage;
+}
 
 type MessageProps = {
   text: string;
-  author: {
+  user: {
     name: string;
-    avatarUrl: string; // default to hardcoded '/vercel.svg', '/python.svg', and '/next.svg' for now
+    avatar_url: string; // default to hardcoded '/vercel.svg', '/python.svg', and '/next.svg' for now
   };
   date: string; // for now hardcode some strings in the format DD-MM-YYYY, later ill use moment.js with actual datetime
 };
 
 function MessageThread({ message }: { message: MessageProps }) {
-  const { author, text, date } = message;
+  const { user, text, date } = message;
 
   return (
     <div className='mt-[17px] flex py-0.5 pl-4 pr-16 leading-[22px] hover:bg-gray-950/[.07]'>
@@ -171,14 +193,14 @@ function MessageThread({ message }: { message: MessageProps }) {
 
       <Image
         className='mr-4 mt-0.5 h-10 w-10 rounded-full bg-white p-px'
-        src={author.avatarUrl || ''}
+        src={user.avatar_url || ''}
         width={40}
         height={40}
         alt='avatar'
       />
       <div className=''>
         <p className='flex items-baseline'>
-          <span className='mr-2 font-medium text-green-400'>{author.name}</span>
+          <span className='mr-2 font-medium text-green-400'>{user.name}</span>
           <span className='text-xs font-medium text-gray-400'>{date}</span>
         </p>
         <p className='text-gray-100'>{message.text}</p>

@@ -22,8 +22,6 @@ export default function ChannelsSidebar({ categories }: ChannelSidebarProps) {
     );
   }
 
-  console.log(categories);
-
   return (
     <nav className='flex w-60 flex-col bg-gray-800'>
       {/* channel header */}
