@@ -1,10 +1,9 @@
 import ServersSidebar from '@/app/components/server-sidebar';
-import { createServerClient } from '@supabase/ssr';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-import { createSupabaseClient } from './lib/db';
+import { createServerClient } from './lib/db';
 import { cookies } from 'next/headers';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -34,8 +33,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const supabase = createSupabaseClient(cookies());
-  const { data: servers, error } = await supabase.from('servers').select('*');
+  const supabase = createServerClient(cookies());
+  const { data: servers, error } = await supabase.rpc(
+    'get_servers_with_channels'
+  );
 
   if (error) throw new Error('Could not fetch servers');
 
@@ -45,7 +46,7 @@ export default async function RootLayout({
         suppressHydrationWarning
         className={`${whitney.className} flex h-screen bg-gray-800 text-gray-100`}
       >
-        <ServersSidebar servers={servers} />
+        <ServersSidebar servers={servers} className='hidden md:flex' />
         {children}
       </body>
     </html>

@@ -1,18 +1,67 @@
+'use client';
+
+import Link from 'next/link';
+import * as Icons from '@/app/components/ui/icons';
+
 export default function Home() {
   return (
     <>
-      {/* second sidebar */}
-      <nav className='h-full w-60 space-y-2 overflow-y-scroll bg-gray-800'>
-        <div className='flex h-12 items-center px-3 shadow-sm'>Dashboard</div>
-        <div className='flex-1 space-y-2 overflow-y-scroll p-3 text-gray-100'>
-          Friends
-        </div>
-      </nav>
-
-      {/* page content */}
-      <main className='flex flex-1 flex-col bg-gray-700'>
-        Welcome to discord
+      <FriendsSidebar />
+      <main className='flex flex-1 flex-col items-center justify-center bg-gray-700'>
+        <span className='text-lg'>Welcome</span>
       </main>
     </>
+  );
+}
+
+function FriendsSidebar() {
+  return (
+    <nav
+      className='hidden h-full w-60 overflow-y-scroll bg-gray-800 md:block'
+      aria-label='Private channels'
+    >
+      <div className='flex h-12 w-full items-center px-[10px] shadow-sm'>
+        <button className='h-7 w-52 truncate rounded bg-gray-900 px-1.5 py-px text-left text-sm text-gray-200'>
+          Find or start a conversation
+        </button>
+      </div>
+      <div className='no-scrollbar m-2 flex flex-1 list-none flex-col gap-0.5 overflow-y-scroll text-gray-100'>
+        <ListItemLink
+          item={{
+            label: 'Friends',
+            icon: (
+              <Icons.PersonWaving className='h-6 w-6 text-gray-200 group-hover:text-white' />
+            ),
+          }}
+        />
+        <ListItemLink
+          item={{
+            label: 'Nitro',
+            icon: (
+              <Icons.Arrow className='h-6 w-6 text-gray-200 group-hover:text-white' />
+            ),
+          }}
+        />
+        <ListItemLink
+          item={{
+            label: 'Shop',
+            icon: (
+              <Icons.Shop className='h-6 w-6 text-gray-200 group-hover:text-white' />
+            ),
+          }}
+        />
+      </div>
+    </nav>
+  );
+}
+
+function ListItemLink({ item }: any) {
+  return (
+    <div className='group flex h-11 w-52 cursor-pointer items-center rounded hover:bg-gray-600'>
+      <Link className='flex items-center gap-2 px-2' href='/'>
+        {item.icon}
+        <span className='group-hover:text-white'>{item.label}</span>
+      </Link>
+    </div>
   );
 }

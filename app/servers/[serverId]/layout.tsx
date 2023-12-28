@@ -1,8 +1,6 @@
 import ChannelsSidebar from '@/app/components/channels-sidebar';
-import { createSupabaseClient } from '@/app/lib/db';
+import { createServerClient } from '@/app/lib/db';
 
-import servers from '@/data.json';
-import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
 export default async function ServerLayout({
@@ -14,7 +12,7 @@ export default async function ServerLayout({
 }) {
   const { serverId } = params;
 
-  const supabase = createSupabaseClient(cookies());
+  const supabase = createServerClient(cookies());
 
   const { data, error } = await supabase
     .from('categories')
@@ -25,7 +23,7 @@ export default async function ServerLayout({
 
   return (
     <>
-      <ChannelsSidebar categories={data} />
+      <ChannelsSidebar className='hidden md:flex' categories={data} />
       {children}
     </>
   );

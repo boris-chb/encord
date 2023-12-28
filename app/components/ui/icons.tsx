@@ -100,12 +100,18 @@ export function AddPerson(props: SVGProps<SVGSVGElement>) {
 
 export function Hashtag(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox='0 0 24 24' {...props}>
+    <svg
+      aria-hidden='true'
+      xmlns='http://www.w3.org/2000/svg'
+      fill='currentColor'
+      viewBox='0 0 24 24'
+      {...props}
+    >
       <path
         fill='currentColor'
         fillRule='evenodd'
+        d='M10.99 3.16A1 1 0 109 2.84L8.15 8H4a1 1 0 000 2h3.82l-.67 4H3a1 1 0 100 2h3.82l-.8 4.84a1 1 0 001.97.32L8.85 16h4.97l-.8 4.84a1 1 0 001.97.32l.86-5.16H20a1 1 0 100-2h-3.82l.67-4H21a1 1 0 100-2h-3.82l.8-4.84a1 1 0 10-1.97-.32L15.15 8h-4.97l.8-4.84zM14.15 14l.67-4H9.85l-.67 4h4.97z'
         clipRule='evenodd'
-        d='M5.887 21a.5.5 0 01-.493-.587L6 17H2.595a.5.5 0 01-.492-.586l.175-1A.5.5 0 012.77 15h3.58l1.06-6H4.005a.5.5 0 01-.492-.586l.175-1A.5.5 0 014.18 7h3.58l.637-3.587A.5.5 0 018.889 3h.984a.5.5 0 01.493.587L9.76 7h6l.637-3.587A.5.5 0 0116.889 3h.984a.5.5 0 01.493.587L17.76 7h3.405a.5.5 0 01.492.586l-.175 1A.5.5 0 0120.99 9h-3.58l-1.06 6h3.405a.5.5 0 01.492.586l-.175 1a.5.5 0 01-.492.414H16l-.637 3.587a.5.5 0 01-.492.413h-.984a.5.5 0 01-.493-.587L14 17H8l-.637 3.587a.5.5 0 01-.492.413h-.984zM9.41 9l-1.06 6h6l1.06-6h-6z'
       />
     </svg>
   );
@@ -212,6 +218,127 @@ export function Spyglass(props: SVGProps<SVGSVGElement>) {
       <path
         fill='currentColor'
         d='M21.707 20.293L16.314 14.9A7.928 7.928 0 0018 10a7.945 7.945 0 00-2.344-5.656A7.94 7.94 0 0010 2a7.94 7.94 0 00-5.656 2.344A7.945 7.945 0 002 10c0 2.137.833 4.146 2.344 5.656A7.94 7.94 0 0010 18a7.922 7.922 0 004.9-1.686l5.393 5.392 1.414-1.413zM10 16a5.959 5.959 0 01-4.242-1.757A5.958 5.958 0 014 10c0-1.602.624-3.109 1.758-4.242A5.956 5.956 0 0110 4c1.603 0 3.109.624 4.242 1.758A5.957 5.957 0 0116 10c0 1.603-.624 3.11-1.758 4.243A5.959 5.959 0 0110 16z'
+      />
+    </svg>
+  );
+}
+
+export function Plus(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg fill='currentColor' viewBox='0 0 24 24' {...props}>
+      <circle cx={12} cy={12} r={10} fill='transparent' />
+      <path
+        fill='var(--interactive-normal)'
+        fillRule='evenodd'
+        d='M12 23a11 11 0 100-22 11 11 0 000 22zm0-17a1 1 0 011 1v4h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H7a1 1 0 110-2h4V7a1 1 0 011-1z'
+        clipRule='evenodd'
+        className='attachButtonPlus_bf89ca'
+      />
+    </svg>
+  );
+}
+
+export function Gift(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox='0 0 24 24' {...props}>
+      <path
+        fill='currentColor'
+        fillRule='evenodd'
+        d='M4 6a4 4 0 014-4h.09c1.8 0 3.39 1.18 3.91 2.9A4.09 4.09 0 0115.91 2H16a4 4 0 013.46 6H20a2 2 0 012 2v1.5a.5.5 0 01-.5.5h-19a.5.5 0 01-.5-.5V10c0-1.1.9-2 2-2h.54A3.98 3.98 0 014 6zm12 2a2 2 0 100-4h-.09c-.96 0-1.8.65-2.02 1.58L13.29 8H16zm-5.89-2.42l.6 2.42H8a2 2 0 110-4h.09c.96 0 1.8.65 2.02 1.58z'
+        clipRule='evenodd'
+      />
+      <path
+        fill='currentColor'
+        d='M3 20c0 1.1.9 2 2 2h5.5a.5.5 0 00.5-.5v-7a.5.5 0 00-.5-.5h-7a.5.5 0 00-.5.5V20zm10.5 2a.5.5 0 01-.5-.5v-7c0-.28.22-.5.5-.5h7c.28 0 .5.22.5.5V20a2 2 0 01-2 2h-5.5z'
+      />
+    </svg>
+  );
+}
+
+export function Gif(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox='0 0 24 24' {...props}>
+      <path
+        fill='currentColor'
+        fillRule='evenodd'
+        d='M5 2a3 3 0 00-3 3v14a3 3 0 003 3h14a3 3 0 003-3V5a3 3 0 00-3-3H5zm2.18 13.87a2.9 2.9 0 01-1.66-.49 3.18 3.18 0 01-1.12-1.35A4.88 4.88 0 014 12c0-.75.14-1.42.42-2 .29-.59.7-1.04 1.24-1.37a3.7 3.7 0 011.95-.5c.64 0 1.21.14 1.72.4.5.28.89.67 1.15 1.16l-1.22.88a1.76 1.76 0 00-1.64-1.02c-.66 0-1.17.22-1.52.65a2.74 2.74 0 00-.53 1.8c0 .78.18 1.39.53 1.81.35.42.86.64 1.52.64.3 0 .57-.06.81-.16.25-.12.45-.27.58-.47v-.93H7.3v-1.4h3.24v4.23H9.27l-.2-.71c-.43.57-1.06.86-1.89.86zm6.34-.15h-1.57V8.28h1.57v7.44zm1.51 0h1.57v-2.83h2.76v-1.42H16.6V9.7H20V8.28h-4.97v7.44z'
+        clipRule='evenodd'
+      />
+    </svg>
+  );
+}
+
+export function Sticker(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox='0 0 24 24' {...props}>
+      <path
+        fill='currentColor'
+        fillRule='evenodd'
+        d='M6 2h12a4 4 0 014 4v7.5a.5.5 0 01-.5.5H19a5 5 0 00-5 5v2.5a.5.5 0 01-.5.5H6a4 4 0 01-4-4V6a4 4 0 014-4zm.5 8a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM19 8.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-9.91 2.94a1 1 0 00-1.66 1.12 5.5 5.5 0 009.14 0 1 1 0 00-1.66-1.12 3.5 3.5 0 01-5.82 0z'
+        clipRule='evenodd'
+      />
+      <path
+        fill='currentColor'
+        d='M21.66 16c.03 0 .05.03.04.06a3 3 0 01-.58.82l-4.24 4.24a3 3 0 01-.82.58.04.04 0 01-.06-.04V19a3 3 0 013-3h2.66z'
+      />
+    </svg>
+  );
+}
+
+export function PersonWaving(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      className='linkButtonIcon__2f35b'
+      aria-hidden='true'
+      xmlns='http://www.w3.org/2000/svg'
+      width={16}
+      height={16}
+      fill='none'
+      viewBox='0 0 24 24'
+      {...props}
+    >
+      <path fill='currentColor' d='M13 10a4 4 0 100-8 4 4 0 000 8z' />
+      <path
+        fill='currentColor'
+        d='M3 5v-.75C3 3.56 3.56 3 4.25 3s1.24.56 1.33 1.25C6.12 8.65 9.46 12 13 12h1a8 8 0 018 8 2 2 0 01-2 2 .21.21 0 01-.2-.15 7.65 7.65 0 00-1.32-2.3c-.15-.2-.42-.06-.39.17l.25 2c.02.15-.1.28-.25.28H9a2 2 0 01-2-2v-2.22c0-1.57-.67-3.05-1.53-4.37A15.85 15.85 0 013 5z'
+      />
+    </svg>
+  );
+}
+
+export function Shop(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      className='linkButtonIcon__2f35b'
+      aria-hidden='true'
+      xmlns='http://www.w3.org/2000/svg'
+      width={23}
+      height={23}
+      fill='none'
+      viewBox='0 0 24 24'
+      {...props}
+    >
+      <path
+        fill='currentColor'
+        d='M2.63 4.19A3 3 0 015.53 2H7a1 1 0 011 1v3.98a3.07 3.07 0 01-.3 1.35A2.97 2.97 0 014.98 10c-2 0-3.44-1.9-2.9-3.83l.55-1.98zM10 2a1 1 0 00-1 1v4a3 3 0 003 3 3 3 0 003-2.97V3a1 1 0 00-1-1h-4zm7 0a1 1 0 00-1 1v3.98a3.65 3.65 0 000 .05A2.95 2.95 0 0019.02 10c2 0 3.44-1.9 2.9-3.83l-.55-1.98A3 3 0 0018.47 2H17z'
+      />
+      <path
+        fill='currentColor'
+        d='M21 11.42V19a3 3 0 01-3 3h-2.75a.25.25 0 01-.25-.25V16a2 2 0 00-2-2h-2a2 2 0 00-2 2v5.75c0 .14-.11.25-.25.25H6a3 3 0 01-3-3v-7.58c0-.18.2-.3.37-.24a4.46 4.46 0 004.94-1.1c.1-.12.3-.12.4 0a4.49 4.49 0 006.58 0c.1-.12.3-.12.4 0a4.45 4.45 0 004.94 1.1c.17-.07.37.06.37.24z'
+      />
+    </svg>
+  );
+}
+
+export function HamburgerMenu(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' {...props}>
+      <path
+        stroke='currentColor'
+        strokeWidth={2.5}
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        d='M3 6h18M3 12h18M3 18h18'
       />
     </svg>
   );

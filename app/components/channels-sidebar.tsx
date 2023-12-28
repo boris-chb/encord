@@ -1,29 +1,19 @@
-'use client';
 import * as Icons from '@/app/components/ui/icons';
-
-import { ChannelLink } from '@/app/components/navigation/channel-link';
-import { useState } from 'react';
-import { useParams } from 'next/navigation';
+import ChannelCategory from './navigation/channels/category';
+import { twMerge } from 'tailwind-merge';
 
 type ChannelSidebarProps = {
   categories: any[];
-};
+} & React.HTMLProps<HTMLDivElement>;
 
-export default function ChannelsSidebar({ categories }: ChannelSidebarProps) {
-  const [closedCategories, setClosedCategories] = useState<number[]>([]);
-  const { channelId } = useParams();
+export default function ChannelsSidebar({
+  categories,
+  className,
+}: ChannelSidebarProps) {
   const serverLabel = categories[0]?.servers.label;
 
-  function toggleCategory(categoryId: number) {
-    setClosedCategories((closedCategories) =>
-      closedCategories.includes(categoryId)
-        ? closedCategories.filter((id) => id !== categoryId)
-        : [...closedCategories, categoryId]
-    );
-  }
-
   return (
-    <nav className='flex w-60 flex-col bg-gray-800'>
+    <nav className={twMerge('w-60 flex-col bg-gray-800', className)}>
       {/* channel header */}
       <button
         type='button'
@@ -40,38 +30,7 @@ export default function ChannelsSidebar({ categories }: ChannelSidebarProps) {
       {/* categories */}
       <div className='flex-1 space-y-[21px] overflow-y-auto pt-3 text-gray-300'>
         {categories.map((category: any) => (
-          <div key={category.id}>
-            {category.label && (
-              <button
-                onClick={() => toggleCategory(category.id)}
-                type='button'
-                className='flex w-full items-center px-0.5 text-xs uppercase tracking-wide hover:text-gray-100'
-              >
-                <Icons.Arrow
-                  className={`${
-                    closedCategories.includes(category.id) && '-rotate-90'
-                  } mr-1 h-3 w-3 transition duration-200`}
-                />
-                {category.label}
-              </button>
-            )}
-
-            {/* channels */}
-            <div className='mt-[5px] space-y-0.5'>
-              {category.channels
-                .filter((channel: any) => {
-                  // filter channels to show only unread when
-                  // category is collapsed
-
-                  let isOpen = !closedCategories.includes(category.id);
-
-                  return isOpen || channel?.unread;
-                })
-                .map((channel: any) => (
-                  <ChannelLink key={channel.id} channel={channel} />
-                ))}
-            </div>
-          </div>
+          <ChannelCategory key={category.id} category={category} />
         ))}
       </div>
     </nav>
