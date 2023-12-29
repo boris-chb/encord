@@ -1,14 +1,16 @@
 'use client';
-import * as Icons from '@/app/components/ui/icons';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { classNames } from '../channels-sidebar';
+import * as Icons from '@/components/ui/icons';
+import useStore from '@/lib/store';
+import { useParams, useRouter } from 'next/navigation';
 
 export function ChannelLink({ channel }: any) {
   // @ts-ignore
   const Icon = channel.icon ? Icons[channel.icon] : Icons.Hashtag;
   const { channelId, serverId } = useParams();
+  const router = useRouter();
   const isActive = +channelId === channel.id;
+
+  const sheetCloseRef = useStore((state) => state.sheetCloseRef);
 
   const state = isActive
     ? 'active'
@@ -23,9 +25,12 @@ export function ChannelLink({ channel }: any) {
   };
 
   return (
-    <Link
+    <button
       key={channel.id}
-      href={`/servers/${serverId}/channels/${channel.id}`}
+      onClick={() => {
+        router.push(`/servers/${serverId}/channels/${channel.id}`);
+        sheetCloseRef.current?.click();
+      }}
       className={`${classes[state]} group relative mx-2 flex items-center rounded px-2 py-1`}
     >
       {state === 'inactiveUnread' && (
@@ -34,6 +39,6 @@ export function ChannelLink({ channel }: any) {
       <Icon className='mr-1.5 h-5 w-5 text-gray-400' />
       {channel.label}
       <Icons.AddPerson className='ml-auto h-4 w-4 text-gray-200 opacity-0 hover:text-gray-100 group-hover:opacity-100' />
-    </Link>
+    </button>
   );
 }

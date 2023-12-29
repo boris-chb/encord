@@ -1,13 +1,15 @@
-'use client';
-
 import Link from 'next/link';
-import * as Icons from '@/app/components/ui/icons';
+import * as Icons from '@/components/ui/icons';
+import MobileSidebar from '@/components/navigation/mobile-sidebar';
 
 export default function Home() {
   return (
     <>
       <FriendsSidebar />
-      <main className='flex flex-1 flex-col items-center justify-center bg-gray-700'>
+      <main className='relative flex flex-1 flex-col items-center justify-center bg-gray-700'>
+        <div className='absolute left-4 top-4'>
+          <MobileSidebar />
+        </div>
         <span className='text-lg'>Welcome</span>
       </main>
     </>

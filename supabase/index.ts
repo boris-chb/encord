@@ -1,3 +1,4 @@
+import { Database } from '@/lib/database.types';
 import {
   createBrowserClient,
   createServerClient as createSSR,
@@ -10,7 +11,7 @@ export const createServerClient = cache(function createClient(
 ) {
   // creates and returns ssr client
 
-  return createSSR(
+  return createSSR<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {

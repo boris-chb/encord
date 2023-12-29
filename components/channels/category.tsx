@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { ChannelLink } from '../channel-link';
-import * as Icons from '@/app/components/ui/icons';
+import { ChannelLink } from '../navigation/channel-link';
+import * as Icons from '@/components/ui/icons';
 
 export default function ChannelCategory({ category }: any) {
   const [closedCategories, setClosedCategories] = useState<number[]>([]);

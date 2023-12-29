@@ -1,19 +1,23 @@
 'use client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 
 export default function NavLink({
   href,
   children,
 }: {
-  href: string;
+  href: any;
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  const isActive = pathname.split('/')[2] === href.split('/')[2];
+  const { serverId } = useParams();
+  const isActive = +serverId === +href.serverId;
 
   return (
-    <Link href={href} className='group relative rounded-2xl'>
+    <Link
+      prefetch
+      href={`/servers/${href.serverId}/channels/${href.channelId}`}
+      className='group relative cursor-pointer rounded-2xl'
+    >
       <div className='absolute -left-3 flex h-full items-center'>
         <div
           className={`${
@@ -26,8 +30,8 @@ export default function NavLink({
       <div
         className={`${
           isActive
-            ? 'rounded-2xl bg-brand text-white'
-            : 'rounded-3xl bg-gray-700 text-gray-100 group-hover:rounded-2xl group-hover:bg-brand group-hover:text-white'
+            ? 'bg-brand rounded-2xl text-white'
+            : 'group-hover:bg-brand rounded-3xl bg-gray-700 text-gray-100 group-hover:rounded-2xl group-hover:text-white'
         } flex h-12 w-12 items-center justify-center  overflow-hidden transition-all  duration-200 group-active:translate-y-px`}
       >
         {children}

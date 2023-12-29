@@ -1,11 +1,10 @@
-import React from 'react';
-import * as Icons from '@/app/components/ui/icons';
+import * as Icons from '@/components/ui/icons';
 
 type MessageInputProps = {};
 
 export default function MessageInput({}: MessageInputProps) {
   return (
-    <form className='-mt-2 h-[68px] px-4'>
+    <form className='h-[68px] p-4'>
       <div className='flex items-center justify-center overflow-hidden rounded bg-gray-800'>
         <IconButton>
           <Icons.Plus className='m-2 h-6 w-6' />
